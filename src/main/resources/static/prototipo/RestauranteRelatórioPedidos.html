@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <title> BlueFood</title>
+            <link rel ="stylesheet" type="text/css" href="css/bf_estiloSistema.css"/>
+    </head>
+    <body>
+        <header>
+            <div id = "divLogoTipoSistema">
+                <span id="spanAuxliarAlinahmentoVertical"></span>
+                <a href="">
+                <img src= "images/bf_logotipoSistema.png" id="imgLogoTipoSistema"/>
+                </a>
+            </div>
+            
+            <div id="divUsuarioLogado"> 
+                Olá, nome do Usuário!
+            </div>            
+        </header>
+        <br/><br/>
+        <!-- Cabeçalho fim-->
+         <div>
+            <h1>Relatórios de Pedidos</h1>            
+
+            <fieldset>
+                <legend>Filtros</legend>
+                <label for="numero">Item: </label><br/>
+                <input type="text" id="numero" name="numero"/><br/>
+                <label for="inicio">Início: </label><br/>
+                <input type="date" id="inicio" name="inicio"/><br/>         
+                <label for="fim">Fim: </label><br/>
+                <input type="date" id="fim" name="fim"/><br/>
+                
+                <input type="button" value="Buscar"/>
+                
+            </fieldset>
+         </div>          
+          <br/><br/>
+          
+          <table>
+            <tr>
+              <th>Pedido</th>
+              <th>Nome</th>
+              <th>Endereço</th>
+              <th>Valor</th>
+            </tr>
+            <tr>
+              <td><input type = "submit" value="#35334"
+              onClick="location.href='RestaurantePedido.html';"/></td>
+              <td>Samuel</td>
+              <td>Rua das Flores, 75</td>
+              <td>R$ 65,00</td>
+            </tr>            
+            <tr>
+              <td><input type = "submit" value="#3452"/></td>
+              <td>Henrique</td>
+              <td>Av. dos Estados,51</td>
+              <td>R$ 95,00</td>
+            </tr>
+            <tr>
+              <td><input type = "submit" value="#6543"/></td>
+              <td>Pedro</td>
+              <td>Rua Marambá, 775</td>
+              <td>R$ 32,00</td>
+            </tr>            
+            <tr>
+              <td><input type = "submit" value="#35334"/></td>
+              <td>Ivo</td>
+              <td>Rua XV de Novembro,11</td>
+              <td>R$ 65,00</td>
+            </tr>
+            <tr>
+              <td><input type = "submit" value="#3452"/></td>
+              <td>Bruno</td>
+              <td>Avenida Atlântica,889</td>
+              <td>R$ 95,00</td>
+            </tr>
+            <tr>
+              <td><input type = "submit" value="#6543"/>
+              <td>Evandro</td>
+              <td>Rua José Antônio,5655</td>
+              <td>R$ 32,00</td>
+            </tr>
+            
+          </table>
+          <br/><br/>
+          
+          <input type="button" value="Voltar"
+          onClick="location.href='RestauranteHome.html';"/>
+
+          <!-- Rodapé início-->
+        <br/><br/>
+      </body>
+  </html>

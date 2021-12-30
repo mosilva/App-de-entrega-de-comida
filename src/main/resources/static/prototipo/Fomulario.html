@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset = "UTF-8">
+            <title>Formulário</title>
+        </head>
+        <body>
+            <script>
+                    function validarFormulario()
+                    {
+                        /*Validacao do campo nome*/
+                        var validacao = true;
+                        
+                        var conteudo_nome = document.forms["meu_form"].campo_nome.value;
+                        
+                        if(conteudo_nome == "") /*Se o nome estiver vazio*/
+                        {
+                            alert("É necessário preencher o campo nome corretamente.");
+                            validacao = false;
+                            return;
+                        }
+                        
+                        /*Campo check box */
+                        
+                        var total_opcoes = document.forms["meu_form"].campo_sexo.length;
+                        
+                        var opcao_escolhida = null;
+                        
+                        for(var i=0; i < total_opcoes; i++)
+                        {
+                            if(document.forms["meu_form"].campo_sexo[i].checked == true)
+                            {                                
+                                opcao_escolhida = document.forms["meu_form"].campo_sexo[i].value;                                   
+                            }
+                        }
+                        
+                        if(opcao_escolhida == null)
+                        {
+                            alert("É necessário escolher o campo sexo corretamente");
+                            validacao = false;
+                            return;
+                        }
+                        
+                        /*Checkbox*/
+                        
+                        var conteudo_maior = document.forms["meu_form"].campo_maior.checked;
+                        
+                        if(conteudo_maior != true)
+                        {
+                            alert("Este site é restrito para maiores de idade");
+                            validação = false;
+                            return;
+                        }
+                        
+                        /*Select*/
+                        
+                        conteudo_comoNumero = document.forms["meu_form"].campo_como.selectedIndex;
+                        
+                        if(conteudo_comoNumero == 0)
+                        {
+                            alert("É necessário selecionar como conheceu o site");
+                            validacao = false;
+                            return;
+                        }
+                        
+                        /*Está tudo correto*/
+                        
+                        if(validacao)
+                        {
+                            alert("Dados válidos");
+                            document.forms["meu_form"].submit();
+                        }
+                        
+                        
+                        
+                    }
+            </script>
+            <form method="post" action="#" name="meu_form">
+                
+                Nome_completo:
+                <input type="text" name="campo_nome"/>
+                <br/>
+                
+                Sexo:
+                <input type="radio" name="campo_sexo" value="M" /> Masculino
+                <input type="radio" name="campo_sexo" value="F"/> Feminino
+                <!--<input type="radio" name="campo_sexo" value="F"checked/> Feminino -->
+                <br/>
+                
+                <input type="checkbox" value="maior" name="campo_maior" checked/>
+                Declaro ser maior de 18 anos
+                <br/>
+                
+                Como conheceu o site?
+                <select name="campo_como"/>
+                    <option value="Nenhum">Selecione</option>
+                    <option value="ind">Indicação de amigo</option>
+                    <option value="Out">Outro site</option>
+                    <option value="Goo">Google</option> 
+                </select>
+                <br/>
+                
+                <input type="reset" value="Limpar dados"/>
+                <input type="button" value="Enviar" onClick="validarFormulario();"/>
+                
+            </form>
+            
+        </body>
+    </html>
