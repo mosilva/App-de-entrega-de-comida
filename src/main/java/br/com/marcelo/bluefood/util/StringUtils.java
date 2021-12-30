@@ -12,7 +12,7 @@ public class StringUtils {
 			return true;
 		}
 		
-		return str.trim().length() == 0; /*String com espaços vazios*/
+		return str.trim().length() == 0; 
 	}
 	
 	public static String encrypt(String rawString) {
