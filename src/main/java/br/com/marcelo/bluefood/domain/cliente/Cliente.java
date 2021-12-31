@@ -17,7 +17,7 @@ import lombok.Setter;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = true)
 @Entity
 @SuppressWarnings("serial")
-@Table(name = "cliente", schema="bluefood")
+@Table(name = "cliente")
 public class Cliente extends Usuario {
 
 	@NotBlank(message = "O CPF não pode ser vazio")
