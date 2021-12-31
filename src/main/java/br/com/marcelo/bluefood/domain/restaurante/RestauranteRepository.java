@@ -8,9 +8,7 @@ public interface RestauranteRepository extends JpaRepository<Restaurante, Intege
 /*<tipo do objeto, tipo do id> */
 {
 	
-	public Restaurante findByEmail(String email); /*ja vai funcionar, o Spring Data reconhece o NOME do método e entende
-	que é pra buscar cliente pelo atributo email, cria a query automaticamente, não precisa fazer nada. 
-	Nessa caso é uma interface não precisa implementar nada, mas ele busca uma querie padrão*/
+	public Restaurante findByEmail(String email); 
 
 	public List<Restaurante> findByNomeIgnoreCaseContaining(String nome);
 	

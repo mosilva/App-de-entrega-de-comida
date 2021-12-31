@@ -21,8 +21,8 @@ public class SearchFilter {
 	private String texto;
 	private SearchType searchType;	
 	private Integer categoriaId;	
-	private Order order = Order.Taxa; // Por padrão será assumido a taxa.	
-	private boolean asc; // padrão maior ou menor
+	private Order order = Order.Taxa; 	
+	private boolean asc; 
 	private boolean entregaGratis;
 	
 	
