@@ -28,7 +28,6 @@ import lombok.Setter;
 public class Pagamento implements Serializable {
 
 	@Id
-	//Com o MapsId o id vem do "pedido", n�o precisa usar o @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	@NotNull

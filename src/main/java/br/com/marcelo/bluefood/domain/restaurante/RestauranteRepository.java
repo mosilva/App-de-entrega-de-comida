@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RestauranteRepository extends JpaRepository<Restaurante, Integer>
-/*<tipo do objeto, tipo do id> */
+
 {
 	
 	public Restaurante findByEmail(String email); 

@@ -109,7 +109,7 @@ public class Restaurante extends Usuario {
 			}
 		}
 		
-		soma /= 2; //dividir por 2 pra n�o ficar um n�mero enorme
+		soma /= 2; 
 		
 		return tempoEntregaBase + soma;		
 	}

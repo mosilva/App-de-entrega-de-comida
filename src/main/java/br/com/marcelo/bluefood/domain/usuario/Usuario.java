@@ -26,7 +26,7 @@ public class Usuario implements Serializable{
 
 	@EqualsAndHashCode.Include
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY) /*gera ID automaticamente*/
+	@GeneratedValue(strategy = GenerationType.IDENTITY) 
 	private Integer id;
 	
 	@NotBlank(message = "O nome não pode ser vazio")
@@ -44,7 +44,7 @@ public class Usuario implements Serializable{
 	
 	@NotBlank(message = "O telefone não pode ser vazia")
 	@Pattern(regexp="[0-9]{10,11}", message = "O telefone possui formato inválido")
-	@Column(length= 11,nullable = false) /*nullable = false - telefone obrigat�rio*/
+	@Column(length= 11,nullable = false) 
 	private String telefone;
 	
 	public void encryptPassword() {

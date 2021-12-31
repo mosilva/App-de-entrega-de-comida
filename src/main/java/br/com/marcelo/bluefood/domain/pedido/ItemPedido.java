@@ -25,7 +25,7 @@ public class ItemPedido implements Serializable {
 
 	@EmbeddedId
 	@EqualsAndHashCode.Include
-	private ItemPedidoPK id; //tem que ser tranformado em duas colunas
+	private ItemPedidoPK id; 
 	
 	@NotNull
 	@ManyToOne
