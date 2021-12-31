@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Integer> {
 	
-	@Query("SELECT DISTINCT ic.categoria FROM ItemCardapio ic WHERE ic.restaurante.id = ?1 ORDER BY ic.categoria")//?1 pegue o primeiro parametro passado no método
+	@Query("SELECT DISTINCT ic.categoria FROM ItemCardapio ic WHERE ic.restaurante.id = ?1 ORDER BY ic.categoria")
 	public List<String> findCategorias(Integer restauranteId);
 		
 	public List<ItemCardapio> findByRestaurante_IdOrderByNome(Integer restauranteId);
