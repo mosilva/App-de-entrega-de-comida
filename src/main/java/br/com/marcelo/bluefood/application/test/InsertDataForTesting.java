@@ -9,6 +9,8 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.core.env.Environment;
+import org.springframework.core.env.Profiles;
 import org.springframework.stereotype.Component;
 
 import br.com.marcelo.bluefood.domain.cliente.Cliente;
@@ -45,20 +47,26 @@ public class InsertDataForTesting {
 	@EventListener
 	public void onAplicationEvent(ContextRefreshedEvent event) {
 		
-		Cliente[] clientes = clientes();
-		Restaurante[] restaurantes = restaurantes();	
-		itensCardapio(restaurantes);
+		Environment environment = event.getApplicationContext().getEnvironment(); // para saber se esta em producao ou test
 		
-		Pedido p = new Pedido();
-		p.setData(LocalDateTime.now());
-		p.setCliente(clientes[0]);
-		p.setRestaurante(restaurantes[0]);
-		p.setStatus(Status.Producao);
-		p.setSubtotal(BigDecimal.valueOf(10));
-		p.setTaxaEntrega(BigDecimal.valueOf(2));
-		p.setTotal(BigDecimal.valueOf(12));
-		pedidoRepository.save(p);
+		if(environment.acceptsProfiles(Profiles.of("dev"))) {
+			Cliente[] clientes = clientes();
+			Restaurante[] restaurantes = restaurantes();	
+			itensCardapio(restaurantes);
+			
+			Pedido p = new Pedido();
+			p.setData(LocalDateTime.now());
+			p.setCliente(clientes[0]);
+			p.setRestaurante(restaurantes[0]);
+			p.setStatus(Status.Producao);
+			p.setSubtotal(BigDecimal.valueOf(10));
+			p.setTaxaEntrega(BigDecimal.valueOf(2));
+			p.setTotal(BigDecimal.valueOf(12));
+			pedidoRepository.save(p);
+		}			
+		
 	}
+	
 	private Restaurante[] restaurantes() {
 		List<Restaurante> restaurantes = new ArrayList<>(); 
 		
